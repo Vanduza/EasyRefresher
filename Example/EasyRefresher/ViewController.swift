@@ -18,7 +18,8 @@ class ViewController: UIViewController {
         "AppearanceRefreshFooter",
         "GIFRefreshHeader",
         "CustomProgressHeader",
-        "CustomFooter"
+        "CustomFooter",
+        "DataStateTest"
     ]
     
     override func viewDidLoad() {
@@ -93,6 +94,10 @@ extension UIViewController: UITableViewDelegate {
         case 4:
             navigationController?.pushViewController(
                 CustomFooterViewController(),
+                animated: true)
+        case 5:
+            navigationController?.pushViewController(
+                DataStateTestViewController(),
                 animated: true)
         default:
             break
