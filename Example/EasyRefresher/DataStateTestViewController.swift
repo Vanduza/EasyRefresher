@@ -9,8 +9,10 @@
 import UIKit
 import RxSwift
 
-class DataStateTestViewController: UITableViewController {
-    private let _viewModel = MockViewModel()
+class DataStateTestViewController: UITableViewController, LoadingProtocol {
+
+    var viewModel = MockViewModel()
+    
     private let _bag = DisposeBag()
     
     override func viewDidLoad() {
@@ -21,18 +23,18 @@ class DataStateTestViewController: UITableViewController {
         
         tableView.refresh.header.addRefreshClosure { [weak self] in
             self?.tableView.refresh.header.isEnabled = true
-            self?._viewModel.load()
+            self?.viewModel.load()
         }
         
         tableView.refresh.footer.addRefreshClosure { [weak self] in
-            if self?._viewModel.items.value.count ?? 0 > 30 {
+            if self?.viewModel.items.value.count ?? 0 > 30 {
                 self?.tableView.refresh.footer.isEnabled = false
             }else {
-                self?._viewModel.loadMore()
+                self?.viewModel.loadMore()
             }
         }
         
-        _viewModel.items.subscribeOn(MainScheduler.instance).subscribe { [weak self] (_) in
+        viewModel.items.subscribeOn(MainScheduler.instance).subscribe { [weak self] (_) in
             self?.tableView.refresh.header.endRefreshing()
             self?.tableView.refresh.footer.endRefreshing()
             self?.tableView.reloadData()
@@ -41,7 +43,7 @@ class DataStateTestViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return _viewModel.items.value.count
+        return viewModel.items.value.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
