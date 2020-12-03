@@ -10,15 +10,18 @@ import UIKit
 import RxSwift
 
 class AutoRefreshViewController: UIViewController, LoadingProtocol {
-    
+    //由子类重写
     var viewModel: DataLoadingProtocol!
-    
+    //由子类重写
     var listView: UIScrollView!
     
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard listView != nil, viewModel != nil else {
+            fatalError("子类重写这两个属性")
+        }
         listView.refresh.header.addRefreshClosure { [weak self] in
             self?.listView.refresh.footer.isEnabled = true
             self?.viewModel.load()
