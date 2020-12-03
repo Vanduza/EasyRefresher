@@ -12,17 +12,17 @@ import RxDataSources
 
 class DataStateTestViewController: AutoRefreshViewController {
     
-    override var viewModel: DataLoadingProtocol? {
+    override var viewModel: DataLoadingProtocol! {
         get {
             return _viewModel
         }
-        
+
         set {
             super.viewModel = newValue
         }
     }
     
-    override var listView: UIScrollView? {
+    override var listView: UIScrollView! {
         get {
             return tableView
         }

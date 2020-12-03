@@ -35,10 +35,6 @@ class MockViewModel: DataLoadingProtocol {
         }.disposed(by: _disposeBag)
     }
     
-    func loadRetry() {
-        load()
-    }
-    
     func load() {
         loadingSignal.onNext(())
     }
