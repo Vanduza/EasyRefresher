@@ -22,14 +22,16 @@ class MockViewModel: DataLoadingProtocol {
     let items: BehaviorRelay<[Int]> = BehaviorRelay.init(value: [])
     
     private let _disposeBag = DisposeBag()
+    private var _dataCount = 0
     
     init() {
         items.subscribe { [weak self] (result: [Int]) in
             guard let sself = self else { return }
-            sself.loadEndSignal.publish().subscribe().dispose()
-            if result.count > 20 {
-                sself.loadNoMoreSignal.publish().subscribe().dispose()
+            sself.loadEndSignal.onNext(())
+            if result.count == sself._dataCount {
+                sself.loadNoMoreSignal.onNext(())
             }
+            sself._dataCount = result.count
         }.disposed(by: _disposeBag)
     }
     
@@ -38,33 +40,10 @@ class MockViewModel: DataLoadingProtocol {
     }
     
     func load() {
-        loadingSignal.publish().subscribe().dispose()
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2, execute: {
-            let result = (0..<5).compactMap({$0})
-            DispatchQueue.main.async {
-                self.items.accept(result)
-            }
-        })
+        loadingSignal.onNext(())
     }
     
     func loadMore() {
-        let random = arc4random() % 2
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
-            if random == 1 {
-                let start = self.items.value.count - 1
-                let end = start + 5
-                let result = (start..<end).compactMap({$0})
-                var temp = self.items.value
-                temp.append(contentsOf: result)
-                DispatchQueue.main.async {
-                    self.items.accept(temp)
-                }
-            }else {
-                DispatchQueue.main.async {
-                    self.loadErrorSignal.publish().subscribe().dispose()
-                }
-            }
-            
-        }
+        loadingSignal.onNext(())
     }
 }

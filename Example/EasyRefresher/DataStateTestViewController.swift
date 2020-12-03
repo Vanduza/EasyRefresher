@@ -8,52 +8,45 @@
 
 import UIKit
 import RxSwift
+import RxDataSources
 
-class DataStateTestViewController: UITableViewController, LoadingProtocol {
+class DataStateTestViewController: UITableViewController {
 
-    var viewModel = MockViewModel()
+    var viewModel = MockBussViewModel()
     
     private let _bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLoadingState()
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CELL")
         tableView.tableFooterView = UIView()
-        
-        tableView.refresh.header.addRefreshClosure { [weak self] in
-            self?.tableView.refresh.header.isEnabled = true
-            self?.viewModel.load()
-        }
-        
-        tableView.refresh.footer.addRefreshClosure { [weak self] in
-            if self?.viewModel.items.value.count ?? 0 > 30 {
-                self?.tableView.refresh.footer.isEnabled = false
-            }else {
-                self?.viewModel.loadMore()
-            }
-        }
-        
-        viewModel.items.subscribeOn(MainScheduler.instance).subscribe { [weak self] (_) in
-            self?.tableView.refresh.header.endRefreshing()
-            self?.tableView.refresh.footer.endRefreshing()
-            self?.tableView.reloadData()
-        }.disposed(by: _bag)
+        tableView.delegate = nil
+        tableView.dataSource = nil
 
-    }
+        viewModel.items.bind(to: tableView.rx.items(cellIdentifier: "CELL", cellType: UITableViewCell.self)){ (index, item, cell) in
+            cell.textLabel?.text = "\(index)"
+        }.disposed(by: disposeBag)
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.items.value.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL")!
-        cell.textLabel?.text = "\(indexPath.row)"
-        return cell
     }
     
     deinit {
         print("dealloc \(type(of: self))")
     }
 
+}
+
+extension DataStateTestViewController: LoadingProtocol {
+    var listView: UIScrollView {
+        return self.tableView
+    }
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
+    
+    var disposeBag: DisposeBag {
+        return _bag
+    }
 }

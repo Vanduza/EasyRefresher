@@ -24,6 +24,7 @@
 		DC6E883A25778BE3004F7C69 /* LoadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E883925778BE3004F7C69 /* LoadingProtocol.swift */; };
 		DCB095BF2574BFA1002B3144 /* CustomProgressHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB095BE2574BFA1002B3144 /* CustomProgressHeaderViewController.swift */; };
 		DCB095C32574C490002B3144 /* CustomFooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB095C22574C490002B3144 /* CustomFooterViewController.swift */; };
+		DCFA63EC257884F4009563D5 /* MockBussViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA63EB257884F4009563D5 /* MockBussViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		DC6E883925778BE3004F7C69 /* LoadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingProtocol.swift; sourceTree = "<group>"; };
 		DCB095BE2574BFA1002B3144 /* CustomProgressHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressHeaderViewController.swift; sourceTree = "<group>"; };
 		DCB095C22574C490002B3144 /* CustomFooterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFooterViewController.swift; sourceTree = "<group>"; };
+		DCFA63EB257884F4009563D5 /* MockBussViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBussViewModel.swift; sourceTree = "<group>"; };
 		E8C60BF0C683CE1F04E860B8 /* Pods-EasyRefresher_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyRefresher_Example.release.xcconfig"; path = "Target Support Files/Pods-EasyRefresher_Example/Pods-EasyRefresher_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F898D09D27C588179D741C11 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				DC6E881C2577849B004F7C69 /* MockViewModel.swift */,
+				DCFA63EB257884F4009563D5 /* MockBussViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				DC6E883A25778BE3004F7C69 /* LoadingProtocol.swift in Sources */,
 				DC6E8816257781F2004F7C69 /* DataStateTestViewController.swift in Sources */,
 				6C81983822893E26005B51F6 /* AppearanceRefreshFooterViewController.swift in Sources */,
+				DCFA63EC257884F4009563D5 /* MockBussViewModel.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				DC6E881D2577849B004F7C69 /* MockViewModel.swift in Sources */,
 				6C8198302289257B005B51F6 /* AutoRefreshFooterViewController.swift in Sources */,
