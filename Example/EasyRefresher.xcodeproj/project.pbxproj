@@ -25,6 +25,7 @@
 		DCB095BF2574BFA1002B3144 /* CustomProgressHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB095BE2574BFA1002B3144 /* CustomProgressHeaderViewController.swift */; };
 		DCB095C32574C490002B3144 /* CustomFooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB095C22574C490002B3144 /* CustomFooterViewController.swift */; };
 		DCFA63EC257884F4009563D5 /* MockBussViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA63EB257884F4009563D5 /* MockBussViewModel.swift */; };
+		DCFA640B2578BCA4009563D5 /* AutoRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA640A2578BCA4009563D5 /* AutoRefreshViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		DCB095BE2574BFA1002B3144 /* CustomProgressHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressHeaderViewController.swift; sourceTree = "<group>"; };
 		DCB095C22574C490002B3144 /* CustomFooterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFooterViewController.swift; sourceTree = "<group>"; };
 		DCFA63EB257884F4009563D5 /* MockBussViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBussViewModel.swift; sourceTree = "<group>"; };
+		DCFA640A2578BCA4009563D5 /* AutoRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRefreshViewController.swift; sourceTree = "<group>"; };
 		E8C60BF0C683CE1F04E860B8 /* Pods-EasyRefresher_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyRefresher_Example.release.xcconfig"; path = "Target Support Files/Pods-EasyRefresher_Example/Pods-EasyRefresher_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F898D09D27C588179D741C11 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +153,7 @@
 		DC6E883325778B6F004F7C69 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DCFA640A2578BCA4009563D5 /* AutoRefreshViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C81983422893C65005B51F6 /* GIFRefreshHeaderViewController.swift in Sources */,
+				DCFA640B2578BCA4009563D5 /* AutoRefreshViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				DC6E883A25778BE3004F7C69 /* LoadingProtocol.swift in Sources */,
 				DC6E8816257781F2004F7C69 /* DataStateTestViewController.swift in Sources */,
