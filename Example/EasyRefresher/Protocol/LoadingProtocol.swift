@@ -30,6 +30,8 @@ protocol DataLoadingProtocol: class {
     /// 加载出错
     var loadErrorSignal: PublishSubject<String> { get }
     
+    var dataCountSignal: PublishSubject<Int> { get }
+    
     var pageSize: Int { get }
     
     /// 加载数据

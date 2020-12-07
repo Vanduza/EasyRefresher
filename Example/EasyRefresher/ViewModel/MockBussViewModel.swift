@@ -12,7 +12,7 @@ import RxSwift
 
 class MockBussViewModel: MockViewModel {
     
-    typealias Item = MockItem
+    let items: BehaviorRelay<[Int]> = BehaviorRelay.init(value: [])
         
     override var pageSize: Int {
         set {
@@ -22,7 +22,16 @@ class MockBussViewModel: MockViewModel {
             return 10
         }
     }
-
+    
+    private let _disposebag = DisposeBag()
+    
+    override init() {
+        super.init()
+        self.items.subscribe { [weak self] (result: [Int]) in
+            self?.dataCountSignal.onNext(result.count)
+        }.disposed(by: _disposebag)
+    }
+    
     override func load() {
         super.load()
         
@@ -50,7 +59,7 @@ class MockBussViewModel: MockViewModel {
         }
     }
     
-    private let total = (0..<0).compactMap({ $0 })
+    private let total = (0..<18).compactMap({ $0 })
     
     struct MockItem {
         var id: String
