@@ -45,12 +45,20 @@ class AutoRefreshViewController: UIViewController, LoadingProtocol {
         viewModel.loadNoMoreSignal.subscribe { [weak self] (_) in
             print("no more")
             DispatchQueue.main.async {
+                self?.listView.refresh.header.endRefreshing()
                 self?.listView.refresh.footer.isEnabled = false
             }
         }.disposed(by: disposeBag)
         
-        viewModel.loadErrorSignal.subscribe { (errMsg) in
+        viewModel.loadErrorSignal.subscribe { [weak self] (errMsg) in
             print("error occurred: \(errMsg)")
+            guard let sself = self, let list = sself.listView else { return }
+            DispatchQueue.main.async {
+                self?.listView.refresh.header.endRefreshing()
+                if list.refresh.footer.isEnabled {
+                    self?.listView.refresh.footer.endRefreshing()
+                }
+            }
         }.disposed(by: disposeBag);
 
         viewModel.loadingSignal.subscribe { (_) in
