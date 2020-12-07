@@ -43,7 +43,6 @@ class DataStateTestViewController: AutoRefreshViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.addSubview(tableView)
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CELL")

@@ -50,7 +50,7 @@ class MockBussViewModel: MockViewModel {
         }
     }
     
-    private let total = (0..<19).compactMap({ $0 })
+    private let total = (0..<0).compactMap({ $0 })
     
     struct MockItem {
         var id: String

@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import DZNEmptyDataSet
 
 class AutoRefreshViewController: UIViewController, LoadingProtocol {
     //由子类重写
@@ -22,6 +23,10 @@ class AutoRefreshViewController: UIViewController, LoadingProtocol {
         guard listView != nil, viewModel != nil else {
             fatalError("子类重写这两个属性")
         }
+        
+        listView.emptyDataSetSource = self
+        listView.emptyDataSetDelegate = self
+        
         listView.refresh.header.addRefreshClosure { [weak self] in
             self?.listView.refresh.footer.isEnabled = true
             self?.viewModel.load()
@@ -66,4 +71,20 @@ class AutoRefreshViewController: UIViewController, LoadingProtocol {
         }.disposed(by: disposeBag)
     }
     
+}
+
+extension AutoRefreshViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let attr = NSAttributedString.init(string: "这是一个空视图")
+        return attr
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        viewModel.load()
+    }
+    
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
+        let attr = NSAttributedString.init(string: "重试")
+        return attr
+    }
 }

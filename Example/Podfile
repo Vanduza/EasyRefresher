@@ -8,4 +8,5 @@ target 'EasyRefresher_Example' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxDataSources'
+  pod 'DZNEmptyDataSet', '1.8.1'
 end
