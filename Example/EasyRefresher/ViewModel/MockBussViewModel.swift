@@ -27,7 +27,7 @@ class MockBussViewModel: MockViewModel {
         super.load()
         
         DispatchQueue.global().asyncAfter(deadline: .now() + 2, execute: {
-            let result = (0..<self.pageSize).compactMap({$0})
+            let result = (0..<self.total.count).compactMap({$0})
             DispatchQueue.main.async {
                 self.items.accept(result)
             }
