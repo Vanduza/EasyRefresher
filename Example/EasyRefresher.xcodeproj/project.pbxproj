@@ -19,13 +19,8 @@
 		6C81983522893C65005B51F6 /* GIFRefreshHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C81983322893C65005B51F6 /* GIFRefreshHeaderViewController.xib */; };
 		6C81983822893E26005B51F6 /* AppearanceRefreshFooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C81983622893E26005B51F6 /* AppearanceRefreshFooterViewController.swift */; };
 		6C81983922893E26005B51F6 /* AppearanceRefreshFooterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C81983722893E26005B51F6 /* AppearanceRefreshFooterViewController.xib */; };
-		DC6E8816257781F2004F7C69 /* DataStateTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E8815257781F2004F7C69 /* DataStateTestViewController.swift */; };
-		DC6E881D2577849B004F7C69 /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E881C2577849B004F7C69 /* MockViewModel.swift */; };
-		DC6E883A25778BE3004F7C69 /* LoadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E883925778BE3004F7C69 /* LoadingProtocol.swift */; };
 		DCB095BF2574BFA1002B3144 /* CustomProgressHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB095BE2574BFA1002B3144 /* CustomProgressHeaderViewController.swift */; };
 		DCB095C32574C490002B3144 /* CustomFooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB095C22574C490002B3144 /* CustomFooterViewController.swift */; };
-		DCFA63EC257884F4009563D5 /* MockBussViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA63EB257884F4009563D5 /* MockBussViewModel.swift */; };
-		DCFA640B2578BCA4009563D5 /* AutoRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA640A2578BCA4009563D5 /* AutoRefreshViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,13 +41,8 @@
 		6C81983622893E26005B51F6 /* AppearanceRefreshFooterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceRefreshFooterViewController.swift; sourceTree = "<group>"; };
 		6C81983722893E26005B51F6 /* AppearanceRefreshFooterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppearanceRefreshFooterViewController.xib; sourceTree = "<group>"; };
 		B26B5401BD9A148C92428788 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		DC6E8815257781F2004F7C69 /* DataStateTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStateTestViewController.swift; sourceTree = "<group>"; };
-		DC6E881C2577849B004F7C69 /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
-		DC6E883925778BE3004F7C69 /* LoadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingProtocol.swift; sourceTree = "<group>"; };
 		DCB095BE2574BFA1002B3144 /* CustomProgressHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressHeaderViewController.swift; sourceTree = "<group>"; };
 		DCB095C22574C490002B3144 /* CustomFooterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFooterViewController.swift; sourceTree = "<group>"; };
-		DCFA63EB257884F4009563D5 /* MockBussViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBussViewModel.swift; sourceTree = "<group>"; };
-		DCFA640A2578BCA4009563D5 /* AutoRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRefreshViewController.swift; sourceTree = "<group>"; };
 		E8C60BF0C683CE1F04E860B8 /* Pods-EasyRefresher_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyRefresher_Example.release.xcconfig"; path = "Target Support Files/Pods-EasyRefresher_Example/Pods-EasyRefresher_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F898D09D27C588179D741C11 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,9 +90,6 @@
 		607FACD21AFB9204008FA782 /* Example for EasyRefresher */ = {
 			isa = PBXGroup;
 			children = (
-				DC6E883825778BD5004F7C69 /* Protocol */,
-				DC6E883325778B6F004F7C69 /* Controller */,
-				DC6E881B25778477004F7C69 /* ViewModel */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				6C81982E2289257B005B51F6 /* AutoRefreshFooterViewController.swift */,
@@ -117,7 +104,6 @@
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				DCB095BE2574BFA1002B3144 /* CustomProgressHeaderViewController.swift */,
 				DCB095C22574C490002B3144 /* CustomFooterViewController.swift */,
-				DC6E8815257781F2004F7C69 /* DataStateTestViewController.swift */,
 			);
 			name = "Example for EasyRefresher";
 			path = EasyRefresher;
@@ -139,31 +125,6 @@
 				F898D09D27C588179D741C11 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
-			sourceTree = "<group>";
-		};
-		DC6E881B25778477004F7C69 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				DC6E881C2577849B004F7C69 /* MockViewModel.swift */,
-				DCFA63EB257884F4009563D5 /* MockBussViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		DC6E883325778B6F004F7C69 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				DCFA640A2578BCA4009563D5 /* AutoRefreshViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		DC6E883825778BD5004F7C69 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				DC6E883925778BE3004F7C69 /* LoadingProtocol.swift */,
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		FE954B2CC52844D4FF35828F /* Frameworks */ = {
@@ -294,14 +255,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C81983422893C65005B51F6 /* GIFRefreshHeaderViewController.swift in Sources */,
-				DCFA640B2578BCA4009563D5 /* AutoRefreshViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				DC6E883A25778BE3004F7C69 /* LoadingProtocol.swift in Sources */,
-				DC6E8816257781F2004F7C69 /* DataStateTestViewController.swift in Sources */,
 				6C81983822893E26005B51F6 /* AppearanceRefreshFooterViewController.swift in Sources */,
-				DCFA63EC257884F4009563D5 /* MockBussViewModel.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				DC6E881D2577849B004F7C69 /* MockViewModel.swift in Sources */,
 				6C8198302289257B005B51F6 /* AutoRefreshFooterViewController.swift in Sources */,
 				DCB095C32574C490002B3144 /* CustomFooterViewController.swift in Sources */,
 				DCB095BF2574BFA1002B3144 /* CustomProgressHeaderViewController.swift in Sources */,
