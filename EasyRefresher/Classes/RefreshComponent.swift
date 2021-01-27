@@ -240,7 +240,7 @@ private extension RefreshComponent {
     func endRefreshing(to state: RefreshState) {
         assert(isDescendantOfScrollView, "Please add refresher to UIScrollView before end refreshing.")
         
-        guard isRefreshing, !isEnding else { return }
+        guard !isEnding else { return }
         
         isEnding = true
         
