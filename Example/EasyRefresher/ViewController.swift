@@ -16,9 +16,7 @@ class ViewController: UIViewController {
     var dataArray: [String] = [
         "AutoRefreshFooter",
         "AppearanceRefreshFooter",
-        "GIFRefreshHeader",
-        "CustomProgressHeader",
-        "CustomFooter"
+        "GIFRefreshHeader"
     ]
     
     override func viewDidLoad() {
@@ -85,14 +83,6 @@ extension UIViewController: UITableViewDelegate {
         case 2:
             navigationController?.pushViewController(
                 GIFRefreshHeaderViewController(),
-                animated: true)
-        case 3:
-            navigationController?.pushViewController(
-                CustomProgressHeaderViewController(),
-                animated: true)
-        case 4:
-            navigationController?.pushViewController(
-                CustomFooterViewController(),
                 animated: true)
         default:
             break
